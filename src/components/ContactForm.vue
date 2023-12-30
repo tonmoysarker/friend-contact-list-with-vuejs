@@ -58,6 +58,7 @@
 
 <script>
 export default {
+    emits: ["add-friend"],
     data() {
         return {
             friend: {

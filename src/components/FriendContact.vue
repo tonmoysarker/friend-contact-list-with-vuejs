@@ -19,6 +19,7 @@
                 <button @click="toggleDetails" class="btn btn-primary">
                     {{ detailsAreVisible ? "Hide" : "Show" }} Details
                 </button>
+                <!-- TODO: need to create delete button and handle functionality -->
             </div>
         </div>
 
