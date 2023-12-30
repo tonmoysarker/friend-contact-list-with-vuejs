@@ -1,18 +1,29 @@
 <template>
     <section class="container mt-5">
-        <header class="bg-primary text-white p-3 rounded">
+        <header class="bg-primary text-white p-3 rounded mb-3">
             <h1>My Friends</h1>
         </header>
-        <contact-form @add-friend="addFriend"></contact-form>
-        <ul class="list-group mt-3">
-            <friend-contact
-                v-for="friend in friends"
-                :key="friend.id"
-                :receivedFreind="friend"
-                @toggle-favourite="toggleFavourite"
-                class="list-group-item"
-            ></friend-contact>
-        </ul>
+
+        <!-- Using Bootstrap's row and columns for layout -->
+        <div class="row">
+            <!-- Contact Form Column -->
+            <div class="col-md-6 mb-3">
+                <contact-form @add-friend="addFriend"></contact-form>
+            </div>
+
+            <!-- Friends List Column with Scroll -->
+            <div class="col-md-6">
+                <ul class="list-group overflow-auto" style="max-height: 400px">
+                    <friend-contact
+                        v-for="friend in friends"
+                        :key="friend.id"
+                        :receivedFreind="friend"
+                        @toggle-favourite="toggleFavourite"
+                        class="list-group-item"
+                    ></friend-contact>
+                </ul>
+            </div>
+        </div>
     </section>
 </template>
 

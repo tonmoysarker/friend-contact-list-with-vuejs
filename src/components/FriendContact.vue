@@ -1,12 +1,17 @@
 <template>
-    <li class="list-group-item">
+    <li class="list-group-item border-top-0">
         <div class="d-flex justify-content-between align-items-center">
             <h2 class="mb-0">
                 {{ friend.name }}
-                <span v-if="friend.isFavourite" class="badge bg-warning ms-2"
-                    >Favourite</span
+                <span
+                    v-if="friend.isFavourite"
+                    class="badge bg-warning text-dark ms-2"
+                    style="font-size: 0.8em"
                 >
+                    Fav
+                </span>
             </h2>
+
             <div>
                 <button @click="toggleFavourite" class="btn btn-secondary me-2">
                     Toggle Favourite
@@ -16,6 +21,7 @@
                 </button>
             </div>
         </div>
+
         <ul v-if="detailsAreVisible" class="list-group mt-3">
             <li class="list-group-item">
                 <strong>Phone:</strong> {{ friend.phone }}
