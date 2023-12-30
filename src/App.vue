@@ -38,7 +38,17 @@ export default {
             ],
         };
     },
-    methods: {},
+    methods: {
+        toggleFavourite(friendId) {
+            const targetFriend = this.friends.find(
+                (friend) => friend.id === friendId
+            );
+            targetFriend.isFavourite = !targetFriend.isFavourite;
+        },
+        addFriend(friend) {
+            this.friends.push(friend);
+        },
+    },
 };
 </script>
 
