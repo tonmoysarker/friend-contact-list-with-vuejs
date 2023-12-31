@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import "bootstrap/dist/css/bootstrap.css";
+import { autoAnimatePlugin } from "@formkit/auto-animate/vue";
 
 import App from "./App.vue";
 import FriendContact from "./components/FriendContact.vue";
@@ -10,4 +11,4 @@ const app = createApp(App);
 app.component("friend-contact", FriendContact);
 app.component("contact-form", ContactForm);
 
-app.mount("#app");
+app.use(autoAnimatePlugin).mount("#app");

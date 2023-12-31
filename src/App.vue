@@ -13,7 +13,11 @@
 
             <!-- Friends List Column with Scroll -->
             <div class="col-md-6">
-                <ul class="list-group overflow-auto" style="max-height: 400px">
+                <ul
+                    v-auto-animate
+                    class="list-group overflow-auto"
+                    style="max-height: 400px"
+                >
                     <friend-contact
                         v-for="friend in friends"
                         :key="friend.id"
